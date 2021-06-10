@@ -5,9 +5,9 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import java.awt.*;
-public class WindowTest extends JFrame {
+public class AppWindow extends JFrame {
   
-    public WindowTest(String title, Dimension size){
+    public AppWindow(String title, Dimension size){
         super(title);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

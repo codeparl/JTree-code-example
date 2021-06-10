@@ -55,6 +55,8 @@ public class TreeDemo extends JTree implements PropertyChangeListener {
 
         });
 
+       
+
         setCellRenderer(new TreeCellRendererDemo());
         setVisible(false);
     }
@@ -69,7 +71,7 @@ public class TreeDemo extends JTree implements PropertyChangeListener {
                         return;
 
                     File filePath = new File(selectedpath);
-                    if (!filePath.exists())
+                    if (!filePath.exists() || filePath.isDirectory())
                         return;
 
                     try {
@@ -81,6 +83,7 @@ public class TreeDemo extends JTree implements PropertyChangeListener {
 
             }// end method
 
+         
         });
 
     }
@@ -107,6 +110,17 @@ public class TreeDemo extends JTree implements PropertyChangeListener {
     }
 
     private void loadFileTree(File dir, boolean setModel, TreePath treePath) {
+      
+      if(!dir.exists()){
+
+        JOptionPane.showMessageDialog(
+            getParent().getParent(),
+             "Please double chack your directory path.",
+              "Invalid directory path",
+               JOptionPane.ERROR_MESSAGE);
+        return;
+
+      }
         DirectoryWalkerTask task;
 
         if (treePath == null)

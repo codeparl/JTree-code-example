@@ -42,6 +42,9 @@ public class AppGUI extends JPanel {
         treeDemo = new TreeDemo(progressBar);
 
         tArea = new JTextArea();
+        tArea.setEditable(false);
+        tArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 22));
+
         browseDirButton = new JButton("Browse...");
         dirTextField = new JTextField(23);
 

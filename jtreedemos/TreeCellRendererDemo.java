@@ -12,6 +12,9 @@ import java.io.File;
 
 public class TreeCellRendererDemo extends DefaultTreeCellRenderer   {
 
+    public TreeCellRendererDemo(){
+        super();
+    }
 
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus){
 
@@ -29,6 +32,9 @@ public class TreeCellRendererDemo extends DefaultTreeCellRenderer   {
         File  filepath  =  new File(joinedPath);
         setText(value.toString());
 
+        setToolTipText(joinedPath);
+      
+        
         if(selected){
             setOpaque(false);
             setBackground(tree.getBackground());
@@ -36,6 +42,8 @@ public class TreeCellRendererDemo extends DefaultTreeCellRenderer   {
             setOpaque(true);
             setForeground(tree.getForeground());
         }
+     
+        
 
             String fileExtension  = getExtension(getText())  ;
             switch (fileExtension) {

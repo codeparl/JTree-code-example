@@ -2,14 +2,14 @@ package jtreedemos;
 
 import javax.swing.SwingUtilities;
 
-public class SwingTreeTest{
+public class AppTest{
 
 
     public static void main(String[] args) {
         
         var title = "JTree Demo - by CodeParl";
         SwingUtilities.invokeLater(()->{
-            WindowTest  windowTest = new WindowTest(title, null);
+            AppWindow  windowTest = new AppWindow(title, null);
             windowTest.setWinLookAndFeel();
             AppGUI  app =  new AppGUI();
             windowTest.setContentPane(app);

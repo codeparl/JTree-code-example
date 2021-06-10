@@ -130,7 +130,6 @@ public class DirectoryWalkerTask extends SwingWorker<Void, Void> {
 
         String dirPath = TreeDemo.joinPath(treePath,false);
         
-        System.out.println(treePath);
         // Get all child nodes of this clicked node/directory as
         // iterable TreeNodes
         DefaultMutableTreeNode thisNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
